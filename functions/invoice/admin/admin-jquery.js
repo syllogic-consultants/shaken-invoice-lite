@@ -5,6 +5,9 @@
  * @since 1.0.0
  *
  **/
+
+
+
 jQuery(document).ready(function($)
 {
 	/**
@@ -14,6 +17,7 @@ jQuery(document).ready(function($)
 	 * @since 1.0.0
 	 *
 	 **/
+var sh_invoice_default_tax = jQuery('#invoice_details input#invoice-tax').attr('value');
 	if($('#invoice_details').size() > 0 )
 	{
 		/* 
@@ -309,6 +313,7 @@ jQuery(document).ready(function($)
 		---------------------*/
 		$('a.add-detail').click(function()
 		{
+
 			$('.details .detail:last').clone().appendTo('.details');
 			$('.details .detail:last input[type=text]').val('0');
 			$('.details .detail:last .title input[type=text]').val('');
@@ -364,5 +369,121 @@ jQuery(document).ready(function($)
 		return vars;
 	}
 
-		
+      var typecurrency;
+      jQuery('#clientchecklist input:checkbox').click(function()
+		{
+            var current_symbol;
+            var domestic_symbol;
+            var domestic_tax;
+            var international_symbol;
+            var international_tax;
+            var replace_symbol ;
+           	var change_tax; 
+            var path = jQuery('#ajaxURL').val();
+            var n = jQuery('#clientchecklist input:checkbox').filter(':checked').length;
+            if(n > 1 || n == 0){
+			   if(n > 1){
+                  alert("Please select only one client");
+                }
+                  jQuery('#clientchecklist input:checkbox').removeAttr("checked");
+
+                 current_symbol=jQuery('#current_symbol').val();
+                 domestic_symbol=jQuery('#domestic_symbol').val();
+                 domestic_tax=jQuery('#domestic_tax').val();
+                  replace_symbol = domestic_symbol;
+           		 change_tax = domestic_tax;
+                 if(current_symbol != replace_symbol){
+                    jQuery('#current_symbol').val(replace_symbol);
+                    replaceCurrency(current_symbol,domestic_symbol);
+                 }
+                 jQuery('#invoice_details input#invoice-tax').attr('value',domestic_tax);
+                 jQuery("li.normal-detail:nth-child(3)").find('span').html(domestic_tax);  
+                 update_subtotal_numbers();
+           }
+            else{
+               
+            	jQuery.ajax({
+                
+   	   	  		url: path,
+      	  			 data: {
+            		 			'term_id' : jQuery('#clientchecklist input:checkbox').filter(':checked').val(),
+            					'action' : 'shaken_invoice_ajaxSubmission'
+            					
+        	  			},
+        				success: function(respon) {
+                        typecurrency = respon;
+                         //alert(typecurrency);
+                         current_symbol=jQuery('#current_symbol').val();
+                         domestic_symbol=jQuery('#domestic_symbol').val();
+                         domestic_tax=jQuery('#domestic_tax').val();
+                        international_symbol=jQuery('#international_symbol').val();
+                        international_tax=jQuery('#international_tax').val();
+                       if(typecurrency == "Domestic"){
+           		            replace_symbol = domestic_symbol;
+           		            change_tax = domestic_tax;
+                        }
+                       else {
+	             
+            	            replace_symbol = international_symbol;
+                       		change_tax = international_tax; 
+                        
+        				}        
+                        if(current_symbol != replace_symbol){
+                            jQuery('#current_symbol').val(replace_symbol)
+                            replaceCurrency(current_symbol,replace_symbol);
+                        }   
+                        jQuery('#invoice_details input#invoice-tax').attr('value',change_tax);
+                        jQuery("li.normal-detail:nth-child(3)").find('span').html(change_tax);
+                        update_subtotal_numbers();
+                   
+                  },
+        	 			error: function(respon, ajaxOptions, thrownError) {
+        							alert(respon.status);
+        							alert(thrownError);
+        							alert(ajaxOptions);
+        				}
+     				});
+                }
+                
+		  });
+	
+      function replaceCurrency(current_currency,replace_currency){
+
+      
+       $(".details .detail p").each(function() {
+         var text1 = $(this).html();
+         var temp;
+         var subtotal;
+         var string;
+         temp = text1.replace(current_currency, replace_currency);
+       
+         $(this).html(temp);
+        });
+        jQuery(".detail-footer").html("");
+        jQuery('.detail').each(function(){
+		var detail = $(this);
+        var rate = detail.find('input#detail-rate').attr('value'); rate = parseFloat(rate);
+	    var duration = detail.find('input#detail-duration').attr('value'); duration = parseFloat(duration);
+		subtotal = 0.00;
+		subtotal = rate * duration; subtotal = subtotal.toFixed(2);
+        });
+		string ="<p><strong>Subtotal:</strong>"+replace_currency+"<span class='invoice-subtotal'>"+subtotal+"</span>&nbsp;&nbsp;&nbsp; ";
+        string =string +"<strong>Tax:</strong>"+replace_currency+"<span class='invoice-tax'>"+get_invoice_tax()+"</span>&nbsp;&nbsp;&nbsp;";
+        string =string +"<strong>Total:</strong>"+replace_currency+"<span class='invoice-total'>"+get_invoice_total()+"</span>&nbsp;&nbsp;&nbsp;";
+        string =string +"<a class='add-detail button-primary' href='#' title='Add New Row'>Add New Row</a></p>";
+      //  alert(string);
+       jQuery(".detail-footer").html(string);
+       jQuery('a.add-detail').click(function()
+		        { 
+                  
+			        jQuery('.details .detail:last').clone().appendTo('.details');
+			        jQuery('.details .detail:last input[type=text]').val('0');
+			        jQuery('.details .detail:last .title input[type=text]').val('');
+			        jQuery('.details .detail:last textarea').html('');
+			        initSubtotalUpdate();
+			        return false;
+		        });    
+    }
+   
+   
 });

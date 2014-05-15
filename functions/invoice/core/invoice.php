@@ -13,6 +13,10 @@ class Invoice
 	 * 
 	 * @param object: sh_invoice to find parent variables.
 	 **/
+	  public $countries = array();
+	   
+		
+		
 	function Invoice($parent)
 	{
 		$this->name = $parent->name;					// Plugin Name
@@ -36,6 +40,8 @@ class Invoice
 		add_action('admin_menu', array($this, 'create_meta_boxes'));
 		add_action('save_post', array($this, 'save_invoice'));
 		add_action('template_redirect', array($this, 'invoice_template_redirect'));
+		add_action( 'wp_ajax_nopriv_shaken_invoice_ajaxSubmission', array($this,'shaken_invoice_ajaxSubmission') );  
+   	add_action( 'wp_ajax_shaken_invoice_ajaxSubmission', array($this,'shaken_invoice_ajaxSubmission') );  
 		
 		//add_filter('wp_footer', array($this, 'task_bar'));
 		return true;
@@ -246,7 +252,7 @@ class Invoice
 		// 3. flush and refresh permalinks
 		global $wp_rewrite;
     	$wp_rewrite->flush_rules();
-
+     $this->country_array();
 	}
 	
 	/**
@@ -259,9 +265,62 @@ class Invoice
 	function invoice_details() 
 	{
 		global $post;
-		
+		//echo $post->ID;
 		// Use nonce for verification
   		echo '<input type="hidden" name="ei_noncename" id="ei_noncename" value="' .wp_create_nonce('ei-n'). '" />';
+  	   $current_currency = sh_invoice_get_currency();
+  	   $format = $this->countries[$current_currency]['currency']['format'];
+	   $current_symbol = str_replace('#','',$format);
+	   $sh_invoice_currency =  get_option('sh_invoice_currency');	
+		if($sh_invoice_currency)
+		{
+			$domestic_currency = $sh_invoice_currency;
+		}
+		else
+		{
+			$domestic_currency = 'US'; // USA is default	
+		}
+	    $format1 = $this->countries[$domestic_currency]['currency']['format'];
+	    $domestic_symbol = str_replace('#','',$format1);
+	  
+	 /*=================================================================*/ 
+	   $sh_invoice_currency_int =  get_option('sh_invoice_currency_int');	
+		if($sh_invoice_currency_int)
+		{
+			$international_currency =  $sh_invoice_currency_int;
+		}
+		else
+		{
+			$international_currency =  'US'; // USA is default	
+		}
+	    $format2 = $this->countries[$international_currency]['currency']['format'];
+	    $international_symbol = str_replace('#','',$format2);
+	  /*=================================================================*/
+	   if(get_post_meta($post->ID, 'invoice_tax', true))
+		{
+			$domestic_tax = get_post_meta($post->ID, 'invoice_tax', true);
+		}
+		elseif(get_option('sh_invoice_tax'))
+		{
+			$domestic_tax = get_option('sh_invoice_tax');
+		}
+		else
+		{
+			$domestic_tax ='0.00';	
+		}
+	  /*=================================================================*/
+	   if(get_post_meta($post->ID, 'invoice_tax', true))
+		{
+			$international_tax = get_post_meta($post->ID, 'invoice_tax', true);
+		}
+		elseif(get_option('sh_invoice_tax_int'))
+		{
+			$international_tax = get_option('sh_invoice_tax_int');
+		}
+		else
+		{
+			$international_tax = '0.00';	
+		}
 		?>
 
 		<ul>
@@ -400,9 +459,17 @@ class Invoice
 		</ul>
         
         <input type="hidden" name="sh_invoice_hidden_currency" id="sh_invoice_hidden_currency"  value="<?php sh_invoice_currency_format(); ?>" />
-        <input type="hidden" name="sh_invoice_hidden_tax" id="sh_invoice_hidden_tax"  value="<?php sh_invoice_tax(); ?>" />
+        <input type="hidden" name="sh_invoice_hidden_tax" id="sh_invoice_hidden_tax"  value="<?php sh_invoice_tax($type); ?>" />
         <input type="hidden" name="sh_invoice_hidden_permalink" id="sh_invoice_hidden_permalink"  value="<?php echo sh_invoice_get_permalink(); ?>" />
         <input type="hidden" name="sh_invoice_hidden_password" id="sh_invoice_hidden_password"  value="<?php echo sh_get_invoice_client_password(); ?>" />
+        <input type="hidden" name="current_symbol" id="current_symbol"  value="<?php echo $current_symbol; ?>" />
+        <input type="hidden" name="domestic_symbol" id="domestic_symbol"  value="<?php echo $domestic_symbol; ?>" />
+        <input type="hidden" name="domestic_tax" id="domestic_tax"  value="<?php echo $domestic_tax; ?>" />
+        <input type="hidden" name="international_symbol" id="international_symbol"  value="<?php echo $international_symbol; ?>" />
+        <input type="hidden" name="international_tax" id="international_tax"  value="<?php echo $international_tax; ?>" />
+        <input type="hidden" name="ajaxURL" id="iajaxURL"  value="<?php echo get_bloginfo('url')?>/wp-admin/admin-ajax.php" />
+        
+   
 		<?php
 		
 		
@@ -700,6 +767,95 @@ class Invoice
             die;
     	}
 	 }
+function country_array(){
+
+      $this->countries['CA'] = array('name'=>'Canada','currency'=>array('code'=>'CAD','format'=>'$#')); 
+		$this->countries['US'] = array('name'=>'USA','currency'=>array('code'=>'USD','format'=>'$#')); 
+		$this->countries['GB'] = array('name'=>'United Kingdom','currency'=>array('code'=>'GBP','format'=>'£#')); 
+		$this->countries['DZ'] = array('name'=>'Algeria','currency'=>array('code'=>'DZD','format'=>'# د.ج')); 
+		$this->countries['AR'] = array('name'=>'Argentina','currency'=>array('code'=>'ARS','format'=>'$#'));
+		$this->countries['AW'] = array('name'=>'Aruba','currency'=>array('code'=>'AWG','format'=>'ƒ#'));
+		$this->countries['AU'] = array('name'=>'Australia','currency'=>array('code'=>'AUD','format'=>'$#'));
+		$this->countries['AT'] = array('name'=>'Austria','currency'=>array('code'=>'EUR','format'=>'€#'));
+		$this->countries['BB'] = array('name'=>'Barbados','currency'=>array('code'=>'BBD','format'=>'$#'));
+		$this->countries['BS'] = array('name'=>'Bahamas','currency'=>array('code'=>'BSD','format'=>'$#'));
+		$this->countries['BH'] = array('name'=>'Bahrain','currency'=>array('code'=>'BHD','format'=>'ب.د #'));
+		$this->countries['BE'] = array('name'=>'Belgium','currency'=>array('code'=>'EUR','format'=>'# €'));
+		$this->countries['BR'] = array('name'=>'Brazil','currency'=>array('code'=>'BRL','format'=>'R$#'));
+		$this->countries['BG'] = array('name'=>'Bulgaria','currency'=>array('code'=>'BGN','format'=>'# лв.'));
+		$this->countries['CL'] = array('name'=>'Chile','currency'=>array('code'=>'CLP','format'=>'$#'));
+		$this->countries['CN'] = array('name'=>'China','currency'=>array('code'=>'CNY','format'=>'¥#'));
+		$this->countries['CO'] = array('name'=>'Colombia','currency'=>array('code'=>'COP','format'=>'$#'));
+		$this->countries['CR'] = array('name'=>'Costa Rica','currency'=>array('code'=>'CRC','format'=>'₡#'));
+		$this->countries['HR'] = array('name'=>'Croatia','currency'=>array('code'=>'HRK','format'=>'# kn'));
+		$this->countries['CY'] = array('name'=>'Cyprus','currency'=>array('code'=>'CYP','format'=>'£#'));
+		$this->countries['CZ'] = array('name'=>'Czech Republic','currency'=>array('code'=>'CZK','format'=>'# Kč'));
+		$this->countries['DK'] = array('name'=>'Denmark','currency'=>array('code'=>'DKK','format'=>'# kr')); 
+		$this->countries['DO'] = array('name'=>'Dominican Republic','currency'=>array('code'=>'DOP','format'=>'$#')); 
+		$this->countries['EC'] = array('name'=>'Ecuador','currency'=>array('code'=>'ESC','format'=>'$#')); 
+		$this->countries['EG'] = array('name'=>'Egypt','currency'=>array('code'=>'EGP','format'=>'£#'));
+		$this->countries['EE'] = array('name'=>'Estonia','currency'=>array('code'=>'EEK','format'=>'# EEK'));
+		$this->countries['FI'] = array('name'=>'Finland','currency'=>array('code'=>'EUR','format'=>'€#'));
+		$this->countries['FR'] = array('name'=>'France','currency'=>array('code'=>'EUR','format'=>'€#'));
+		$this->countries['DE'] = array('name'=>'Germany','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['GR'] = array('name'=>'Greece','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['GP'] = array('name'=>'Guadeloupe','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['GT'] = array('name'=>'Guatemala','currency'=>array('code'=>'GTQ','format'=>'Q#')); 
+		$this->countries['HK'] = array('name'=>'Hong Kong','currency'=>array('code'=>'HKD','format'=>'$#')); 
+		$this->countries['HU'] = array('name'=>'Hungary','currency'=>array('code'=>'HUF','format'=>'# Ft')); 
+		$this->countries['IS'] = array('name'=>'Iceland','currency'=>array('code'=>'ISK','format'=>'# kr.')); 
+		$this->countries['IN'] = array('name'=>'India','currency'=>array('code'=>'INR','format'=>'₨#')); 
+		$this->countries['ID'] = array('name'=>'Indonesia','currency'=>array('code'=>'IDR','format'=>'Rp #')); 
+		$this->countries['IE'] = array('name'=>'Ireland','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['IL'] = array('name'=>'Israel','currency'=>array('code'=>'ILS','format'=>'₪ #')); 
+		$this->countries['IT'] = array('name'=>'Italy','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['JM'] = array('name'=>'Jamaica','currency'=>array('code'=>'JMD','format'=>'$#')); 
+		$this->countries['JP'] = array('name'=>'Japan','currency'=>array('code'=>'JPY','format'=>'¥#')); 
+		$this->countries['LV'] = array('name'=>'Latvia','currency'=>array('code'=>'LVL','format'=>'# Ls')); 
+		$this->countries['LT'] = array('name'=>'Lithuania','currency'=>array('code'=>'LTL','format'=>'# Lt')); 
+		$this->countries['LU'] = array('name'=>'Luxembourg','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['MY'] = array('name'=>'Malaysia','currency'=>array('code'=>'MYR','format'=>'RM#')); 
+		$this->countries['MT'] = array('name'=>'Malta','currency'=>array('code'=>'MTL','format'=>'€#')); 
+		$this->countries['MX'] = array('name'=>'Mexico','currency'=>array('code'=>'MXN','format'=>'$#')); 
+		$this->countries['NL'] = array('name'=>'Netherlands','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['NZ'] = array('name'=>'New Zealand','currency'=>array('code'=>'NZD','format'=>'$#')); 
+		$this->countries['NG'] = array('name'=>'Nigeria','currency'=>array('code'=>'NGN','format'=>'₦#'));
+		$this->countries['NO'] = array('name'=>'Norway','currency'=>array('code'=>'NOK','format'=>'kr #')); 
+		$this->countries['PK'] = array('name'=>'Pakistan','currency'=>array('code'=>'PKR','format'=>'₨#')); 
+		$this->countries['PE'] = array('name'=>'Peru','currency'=>array('code'=>'PEN','format'=>'S/. #')); 
+		$this->countries['PH'] = array('name'=>'Philippines','currency'=>array('code'=>'PHP','format'=>'Php #')); 
+		$this->countries['PL'] = array('name'=>'Poland','currency'=>array('code'=>'PLZ','format'=>'# zł')); 
+		$this->countries['PT'] = array('name'=>'Portugal','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['PR'] = array('name'=>'Puerto Rico','currency'=>array('code'=>'USD','format'=>'$#')); 
+		$this->countries['RO'] = array('name'=>'Romania','currency'=>array('code'=>'ROL','format'=>'# lei'));
+		$this->countries['RU'] = array('name'=>'Russia','currency'=>array('code'=>'RUB','format'=>'# руб')); 
+		$this->countries['SG'] = array('name'=>'Singapore','currency'=>array('code'=>'SGD','format'=>'$#')); 
+		$this->countries['SK'] = array('name'=>'Slovakia','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['SI'] = array('name'=>'Slovenia','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['ZA'] = array('name'=>'South Africa','currency'=>array('code'=>'ZAR','format'=>'R#')); 
+		$this->countries['KR'] = array('name'=>'South Korea','currency'=>array('code'=>'KRW','format'=>'₩#')); 
+		$this->countries['ES'] = array('name'=>'Spain','currency'=>array('code'=>'EUR','format'=>'€#')); 
+		$this->countries['VC'] = array('name'=>'St. Vincent','currency'=>array('code'=>'XCD','format'=>'$#')); 
+		$this->countries['SE'] = array('name'=>'Sweden','currency'=>array('code'=>'SEK','format'=>'# kr')); 
+		$this->countries['CH'] = array('name'=>'Switzerland','currency'=>array('code'=>'CHF','format'=>"# CHF")); 
+		$this->countries['TW'] = array('name'=>'Taiwan','currency'=>array('code'=>'TWD','format'=>'NT$#')); 
+		$this->countries['TH'] = array('name'=>'Thailand','currency'=>array('code'=>'THB','format'=>'#฿')); 
+		$this->countries['TT'] = array('name'=>'Trinidad and Tobago','currency'=>array('code'=>'TTD','format'=>'TT$#')); 
+		$this->countries['TR'] = array('name'=>'Turkey','currency'=>array('code'=>'TRL','format'=>'# TL')); 
+		$this->countries['UA'] = array('name'=>'Ukraine','currency'=>array('code'=>'UAH','format'=>'# ₴')); 
+		$this->countries['AE'] = array('name'=>'United Arab Emirates','currency'=>array('code'=>'AED','format'=>'Dhs. #')); 
+		$this->countries['UY'] = array('name'=>'Uruguay','currency'=>array('code'=>'UYP','format'=>'$#')); 
+		$this->countries['VE'] = array('name'=>'Venezuela','currency'=>array('code'=>'VUB','format'=>'Bs. #')); 
+
+}
+function shaken_invoice_ajaxSubmission() {
+   
+	      $term_id = $_REQUEST['term_id'];
+	      $action = get_term_meta($term_id, 'client_type', true);
+	      echo $action;
+      	exit;			
+			
+		}
 }
 
 ?>

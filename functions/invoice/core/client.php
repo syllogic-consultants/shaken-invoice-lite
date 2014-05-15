@@ -112,7 +112,11 @@ class Client
 			<input type="text" id="client_number" name="client_number" size="40" value="">
             <p><?php _e('Could be used as a VAT Number','sh_invoice'); ?></p>
 		</div>
-		
+		 <div class="form-field">
+			<label for="client_type"><?php _e('Client Type','sh_invoice'); ?></label>
+		<input type="radio" name="client_type" value="Domestic" checked="checked" /> Domestic
+      <input type="radio" name="client_type" value="International" /> International
+		</div>
 		<?php
 	}
 	
@@ -130,6 +134,7 @@ class Client
 		$client_address = get_term_meta($tag->term_id, 'client_address', true);
 		$client_phone = get_term_meta($tag->term_id, 'client_phone', true);
 		$client_number = get_term_meta($tag->term_id, 'client_number', true);
+		$client_type = get_term_meta($tag->term_id, 'client_type', true);
 		?>
 		<tr class="form-field">
 			<th scope="row" valign="top"><label for="client_email"><?php _e('Email Address','sh_invoice'); ?></label></th>
@@ -155,6 +160,14 @@ class Client
 			<th scope="row" valign="top"><label for="client_number"><?php _e('Client Number','sh_invoice'); ?></label></th>
 			<td><input type="text" id="client_number" name="client_number" size="40" value="<?php echo $client_number; ?>"><br />
             <span class="description"><?php _e('Could be used as a VAT Number','sh_invoice'); ?></span></td>
+		</tr>
+		 <tr class="form-field">
+		<th scope="row" valign="top"><label for="client_type"><?php _e('Client Type','sh_invoice'); ?></label></th>
+		<td>
+		<input type="radio" name="client_type" 
+		value="Domestic" <?php if( $client_type !="International"): ?>checked="checked" <?php endif; ?> /> Domestic
+      <input type="radio" name="client_type" 
+      value="International" <?php if( $client_type =="International"): ?>checked="checked" <?php endif; ?> /> International</td>
 		</tr>
 		<?php
 	}
@@ -186,6 +199,8 @@ class Client
 			
 		if (isset($_POST['client_number']))
 			update_term_meta($term_id, 'client_number', $_POST['client_number']);
+	  if (isset($_POST['client_type']))
+			update_term_meta($term_id, 'client_type', $_POST['client_type']);		
 	}
 	
 	/**
@@ -203,6 +218,7 @@ class Client
 		delete_term_meta($term_id, 'client_address', $_POST['client_address']);
 		delete_term_meta($term_id, 'client_phone', $_POST['client_phone']);
 		delete_term_meta($term_id, 'client_number', $_POST['client_number']);
+		delete_term_meta($term_id, 'client_type', $_POST['client_type']);
 	}
 	
 	/**

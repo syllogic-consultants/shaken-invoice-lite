@@ -409,7 +409,24 @@
 	
 	function sh_invoice_get_currency()
 	{
-		$sh_invoice_currency =  get_option('sh_invoice_currency');	
+		
+	global $post;
+	$terms = get_the_terms($post->ID , 'client');
+	if($terms)
+	{	
+		$terms = array_values($terms);
+		$client_type = get_term_meta($terms[0]->term_id, 'client_type', true);
+		if($client_type == "Domestic"):
+			$type='';
+		else:
+			$type="_int";
+		endif;
+	}
+	else
+	{
+		$type='';	
+	}
+		$sh_invoice_currency =  get_option('sh_invoice_currency'.$type);	
 		if($sh_invoice_currency)
 		{
 			return $sh_invoice_currency;
@@ -419,7 +436,18 @@
 			return 'US'; // USA is default	
 		}
 	}
-	
+	  function sh_invoice_get_currency_int()
+	 {
+		$sh_invoice_currency_int =  get_option('sh_invoice_currency_int');	
+		if($sh_invoice_currency_int)
+		{
+			return $sh_invoice_currency_int;
+		}
+		else
+		{
+			return 'US'; // USA is default	
+		}
+	}
 	function sh_invoice_currency_code()
 	{
 		echo sh_invoice_get_currency_code();
@@ -534,21 +562,40 @@
 	/*--------------------------------------------------------------------------------------------
 												Tax	
 	--------------------------------------------------------------------------------------------*/
-	function sh_invoice_tax()
+	function sh_invoice_tax($type='')
 	{
 		global $post;
-		echo sh_get_sh_invoice_tax($post->ID);
+		echo sh_get_sh_invoice_tax($post->ID,$type);
 	}
 	
-	function sh_get_sh_invoice_tax($invoiceID = NULL)
+	function sh_get_sh_invoice_tax($invoiceID = NULL,$type='')
 	{
+		
+		if($type == ''):
+			$terms = get_the_terms($post->ID , 'client');
+			if($terms)
+			{	
+				$terms = array_values($terms);
+				$client_type = get_term_meta($terms[0]->term_id, 'client_type', true);
+				if($client_type == "Domestic"):
+					$type='';
+				else:
+					$type="_int";
+				endif;
+			}
+			else
+			{
+				$type='';	
+			}
+		endif;
+		
 		if(get_post_meta($invoiceID, 'invoice_tax', true))
 		{
 			return get_post_meta($invoiceID, 'invoice_tax', true);
 		}
-		elseif(get_option('sh_invoice_tax'))
+		elseif(get_option('sh_invoice_tax'.$type))
 		{
-			return get_option('sh_invoice_tax');
+			return get_option('sh_invoice_tax'.$type);
 		}
 		else
 		{
@@ -671,6 +718,18 @@
 			return 'None';	
 		}
 	}
+   function sh_get_payment_gateway_int()
+	{
+		$sh_invoice_payment_gateway_int = get_option('sh_invoice_payment_gateway_int');	
+		if($sh_invoice_payment_gateway_int)
+		{
+			return $sh_invoice_payment_gateway_int;
+		}
+		else
+		{
+			return 'None';	
+		}
+	}
 	
 	function sh_invoice_payment_gateway()
 	{
@@ -683,9 +742,9 @@
 	 * @since 1.0.0
 	 *
 	 **/
-	 function sh_get_payment_gateway_account()
+	 function sh_get_payment_gateway_account($type='')
 	{
-		$sh_invoice_payment_gateway_account = get_option('sh_invoice_payment_gateway_account');	
+		$sh_invoice_payment_gateway_account = get_option('sh_invoice_payment_gateway_account'.$type);	
 		if($sh_invoice_payment_gateway_account)
 		{
 			return $sh_invoice_payment_gateway_account;
@@ -697,7 +756,7 @@
 	}
 	function sh_invoice_payment_gateway_account()
 	{
-		echo sh_get_payment_gateway_account();
+		echo sh_get_payment_gateway_account($type);
 	}
 	
 	

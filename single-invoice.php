@@ -10,15 +10,32 @@
  * 2. rename the folder to "invoice"
  *
  **/
- 
+
 if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 	
 	global $payment_gateway_account;
+	$post_id = get_the_ID();
+   $terms = get_the_terms($post->ID , 'client');
+	if($terms)
+	{	
+		$terms = array_values($terms);
+		$type= get_term_meta($terms[0]->term_id, 'client_type', true);
+	}
+	else
+	{
+		$type='';	
+	}
+   if( $type =='' || $type =='Domestic' ):
+       $payment_gateway_name = sh_get_payment_gateway();
+       $payment_gateway_account = sh_get_payment_gateway_account(''); 
+   else:
+      $payment_gateway_name = sh_get_payment_gateway_int();
+      $payment_gateway_account = sh_get_payment_gateway_account('_int');
+   endif;
 	
-	$payment_gateway_name = sh_get_payment_gateway();
 	$payment_gateway_name = str_replace(' ', '', $payment_gateway_name);
 	
-	$payment_gateway_account = sh_get_payment_gateway_account();
+	
 	$payment_status = sh_get_invoice_status();
 	$invoice_type = sh_get_invoice_type();
 	
