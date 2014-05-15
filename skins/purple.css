@@ -1,0 +1,25 @@
+a{ color: #8f51a6; }
+
+#page header{
+	background: #25152d;
+	background: url(../images/diag-lines.png) repeat, -webkit-gradient(linear, left top, left bottom, from(#25152d), to(#5c4365));
+	background: url(../images/diag-lines.png) repeat, -webkit-linear-gradient(#25152d, #5c4365);
+	background: url(../images/diag-lines.png) repeat, -moz-linear-gradient(center top, #25152d 0%, #5c4365 100%);
+	background: url(../images/diag-lines.png) repeat, -moz-gradient(center top, #25152d 0%, #5c4365 100%);
+}
+
+section.mini{
+	border-right: 2px solid #5e4c66;	
+}
+
+.pay, .btn{
+	color: #312c1d;
+	background: #e9d693;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e9d693), to(#d4b458));
+    background: -webkit-linear-gradient(#e9d693, #d4b458);
+    background: -moz-linear-gradient(center top, #e9d693 0%, #d4b458 100%);
+    background: -moz-gradient(center top, #e9d693 0%, #d4b458 100%);	
+}
+	.summary .pay, .summary .btn, .page-entry .btn{
+		border: 1px solid #d4b458;	
+	}

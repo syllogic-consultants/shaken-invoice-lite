@@ -1,0 +1,13 @@
+a{ color: #77b748; }
+
+#page header{
+	background: #23303e;
+	background: url(../images/diag-lines.png) repeat, -webkit-gradient(linear, left top, left bottom, from(#1a1a1a), to(#4e4e4e));
+	background: url(../images/diag-lines.png) repeat, -webkit-linear-gradient(#1a1a1a, #4e4e4e);
+	background: url(../images/diag-lines.png) repeat, -moz-linear-gradient(center top, #1a1a1a 0%, #4e4e4e 100%);
+	background: url(../images/diag-lines.png) repeat, -moz-gradient(center top, #1a1a1a 0%, #4e4e4e 100%);
+}
+
+section.mini{
+	border-right: 2px solid #999;	
+}

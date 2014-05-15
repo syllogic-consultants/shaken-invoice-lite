@@ -1,0 +1,1057 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: shaken\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-02 13:08-0500\n"
+"PO-Revision-Date: 2011-11-02 13:09-0500\n"
+"Last-Translator: Sawyer <hello@sawyerhollenshead.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:13
+msgid "404: Page Not Found"
+msgstr ""
+
+#: 404.php:17
+msgid "We're sorry but that page could not be found."
+msgstr ""
+
+#: comments.php:15
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:31
+msgid "What Others Are Saying"
+msgstr ""
+
+#: comments.php:35
+#: comments.php:55
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr ""
+
+#: comments.php:36
+#: comments.php:56
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: comments.php:65
+msgid "Be The First To Comment"
+msgstr ""
+
+#: comments.php:73
+msgid "Discussion"
+msgstr ""
+
+#: comments.php:74
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:102
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:104
+msgid "Displayed on the basic pages"
+msgstr ""
+
+#: functions.php:115
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:153
+msgid "404 Not Found"
+msgstr ""
+
+#: functions.php:155
+msgid "Category:"
+msgstr ""
+
+#: functions.php:157
+msgid "Tag:"
+msgstr ""
+
+#: functions.php:159
+#: search.php:6
+msgid "Search Results"
+msgstr ""
+
+#: functions.php:161
+msgid "Archives:"
+msgstr ""
+
+#: index.php:74
+msgid "ID #"
+msgstr ""
+
+#: index.php:75
+msgid "Title"
+msgstr ""
+
+#: index.php:76
+msgid "Date"
+msgstr ""
+
+#: index.php:77
+msgid "Total"
+msgstr ""
+
+#: index.php:78
+msgid "Status"
+msgstr ""
+
+#: index.php:88
+msgid "Paid"
+msgstr ""
+
+#: index.php:91
+#: index.php:97
+msgid "Pending"
+msgstr ""
+
+#: index.php:94
+msgid "Approved"
+msgstr ""
+
+#: index.php:103
+msgid "[Quote]"
+msgstr ""
+
+#: index.php:136
+#: index.php:140
+#: index.php:142
+msgid "Error:"
+msgstr ""
+
+#: index.php:136
+msgid "The Dashboard URL must consist of your client ID and key. Please contact us if you think this is a mistake."
+msgstr ""
+
+#: index.php:140
+msgid "Your key is invalid. Please contact us if you think this is a mistake."
+msgstr ""
+
+#: index.php:142
+msgid "We couldn't find your information. Please contact us if you think this is a mistake."
+msgstr ""
+
+#: index.php:147
+msgid "Try Doing a Search"
+msgstr ""
+
+#: index.php:149
+msgid "Client ID:"
+msgstr ""
+
+#: index.php:152
+msgid "Access Key:"
+msgstr ""
+
+#: index.php:155
+msgid "Search"
+msgstr ""
+
+#: loop.php:13
+msgid "by"
+msgstr ""
+
+#: loop.php:16
+msgid "Pages:"
+msgstr ""
+
+#: loop.php:24
+#, php-format
+msgid "%2$s"
+msgstr ""
+
+#: loop.php:27
+msgid "Shortlink"
+msgstr ""
+
+#: loop.php:34
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: loop.php:37
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: loop.php:45
+msgid "Uh Oh"
+msgstr ""
+
+#: loop.php:48
+msgid "Sorry, but you are looking for something that isn't here. Try searching for it"
+msgstr ""
+
+#: page.php:21
+#: single.php:21
+#: template-full-width.php:20
+msgid "Edit Page"
+msgstr ""
+
+#: search.php:19
+msgid "Nothing found"
+msgstr ""
+
+#: search.php:23
+msgid "Sorry, we couldn't find any results for your search."
+msgstr ""
+
+#: single-invoice.php:68
+msgid "Issued:"
+msgstr ""
+
+#: single-invoice.php:73
+msgid "Unique ID:"
+msgstr ""
+
+#: single-invoice.php:79
+msgid "Print"
+msgstr ""
+
+#: single-invoice.php:88
+#: single-invoice.php:196
+msgid "Invoice Paid"
+msgstr ""
+
+#: single-invoice.php:91
+#: single-invoice.php:199
+msgid "Approve"
+msgstr ""
+
+#: single-invoice.php:94
+#: single-invoice.php:202
+msgid "Quote Approved"
+msgstr ""
+
+#: single-invoice.php:103
+msgid "Warning:"
+msgstr ""
+
+#: single-invoice.php:103
+msgid "Payment account options have not been set. You will not receive payments until you set these, under Invoices &raquo; Options."
+msgstr ""
+
+#: single-invoice.php:110
+msgid "To:"
+msgstr ""
+
+#: single-invoice.php:121
+msgid "From:"
+msgstr ""
+
+#: single-invoice.php:148
+msgid "Item"
+msgstr ""
+
+#: single-invoice.php:149
+msgid "Type"
+msgstr ""
+
+#: single-invoice.php:150
+msgid "Rate"
+msgstr ""
+
+#: single-invoice.php:151
+msgid "Quantity"
+msgstr ""
+
+#: single-invoice.php:152
+#: single-invoice.php:178
+msgid "Sub-total"
+msgstr ""
+
+#: single-invoice.php:160
+msgid " / hr"
+msgstr ""
+
+#: single-invoice.php:171
+msgid "Notes:"
+msgstr ""
+
+#: single-invoice.php:183
+msgid "Tax"
+msgstr ""
+
+#: single-invoice.php:188
+msgid "Amount Due"
+msgstr ""
+
+#: single-invoice.php:211
+msgid "Not Found"
+msgstr ""
+
+#: single-invoice.php:217
+msgid "Invoice Not Found"
+msgstr ""
+
+#: single-invoice.php:218
+msgid "We're sorry, but that invoice doesn't seem to exist."
+msgstr ""
+
+#: functions/admin-options/options-framework.php:255
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: functions/admin-options/options-framework.php:287
+msgid "Default options restored."
+msgstr ""
+
+#: functions/admin-options/options-framework.php:328
+msgid "Options saved."
+msgstr ""
+
+#: functions/admin-options/options-framework.php:386
+msgid "Theme Options"
+msgstr ""
+
+#: functions/admin-options/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr ""
+
+#: functions/admin-options/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr ""
+
+#: functions/admin-options/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr ""
+
+#: functions/admin-options/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr ""
+
+#: functions/admin-options/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr ""
+
+#: functions/invoice/duplicate-invoice.php:19
+msgid "No invoice to duplicate has been supplied!"
+msgstr ""
+
+#: functions/invoice/duplicate-invoice.php:39
+msgid "invoice creation failed, could not find original invoice:"
+msgstr ""
+
+#: functions/invoice/duplicate-invoice.php:57
+msgid "Make a duplicate from this invoice"
+msgstr ""
+
+#: functions/invoice/duplicate-invoice.php:58
+msgid "Duplicate"
+msgstr ""
+
+#: functions/invoice/duplicate-invoice.php:81
+msgid "Copy to a new draft"
+msgstr ""
+
+#: functions/invoice/duplicate-invoice.php:117
+msgid " (Copy)"
+msgstr ""
+
+#: functions/invoice/invoice-init.php:43
+msgid "Shaken Invoice"
+msgstr ""
+
+#: functions/invoice/invoice-init.php:90
+msgid "Options"
+msgstr ""
+
+#: functions/invoice/admin/client-email.php:30
+msgid "Error: No recipient email address found"
+msgstr ""
+
+#: functions/invoice/admin/client-email.php:35
+msgid "Error: No message body found"
+msgstr ""
+
+#: functions/invoice/admin/client-email.php:51
+msgid "Email was successfully sent!"
+msgstr ""
+
+#: functions/invoice/admin/client-email.php:65
+msgid "Email failed to send"
+msgstr ""
+
+#: functions/invoice/admin/options.php:34
+msgid "Insufficient permissions"
+msgstr ""
+
+#: functions/invoice/admin/options.php:40
+msgid "Settings updated"
+msgstr ""
+
+#: functions/invoice/admin/options.php:47
+msgid "Invoice Options"
+msgstr ""
+
+#: functions/invoice/admin/options.php:55
+msgid "Currency"
+msgstr ""
+
+#: functions/invoice/admin/options.php:55
+msgid "This is used throughout the theme"
+msgstr ""
+
+#: functions/invoice/admin/options.php:58
+msgid "Select a Currency"
+msgstr ""
+
+#: functions/invoice/admin/options.php:68
+msgid "Enter Tax Amount (5% = .05)"
+msgstr ""
+
+#: functions/invoice/admin/options.php:72
+msgid "Send Invoice"
+msgstr ""
+
+#: functions/invoice/admin/options.php:72
+msgid "Select invoice recipients"
+msgstr ""
+
+#: functions/invoice/admin/options.php:74
+msgid "Send Invoice to Client Only"
+msgstr ""
+
+#: functions/invoice/admin/options.php:76
+msgid "Send Invoice to Client &amp; Me (<a href=\"profile.php\">see Profile</a>)"
+msgstr ""
+
+#: functions/invoice/admin/options.php:81
+msgid "E-mail Content"
+msgstr ""
+
+#: functions/invoice/admin/options.php:82
+msgid "This is what will display above the invoice/quote link when you e-mail it through the Admin screen"
+msgstr ""
+
+#: functions/invoice/admin/options.php:88
+msgid "Permalinks"
+msgstr ""
+
+#: functions/invoice/admin/options.php:88
+msgid "Encoded is more secure"
+msgstr ""
+
+#: functions/invoice/admin/options.php:90
+msgid "Encoded"
+msgstr ""
+
+#: functions/invoice/admin/options.php:92
+msgid "Standard"
+msgstr ""
+
+#: functions/invoice/admin/options.php:95
+msgid "Content Editor"
+msgstr ""
+
+#: functions/invoice/admin/options.php:95
+msgid "Add content to your invoice"
+msgstr ""
+
+#: functions/invoice/admin/options.php:97
+#: functions/invoice/admin/options.php:128
+msgid "Enabled"
+msgstr ""
+
+#: functions/invoice/admin/options.php:99
+#: functions/invoice/admin/options.php:130
+msgid "Disabled"
+msgstr ""
+
+#: functions/invoice/admin/options.php:104
+msgid "Payment Gateway"
+msgstr ""
+
+#: functions/invoice/admin/options.php:104
+msgid "Let clients pay invoice's online"
+msgstr ""
+
+#: functions/invoice/admin/options.php:119
+msgid "Enter your account ID."
+msgstr ""
+
+#: functions/invoice/admin/options.php:126
+msgid "Sandbox Mode"
+msgstr ""
+
+#: functions/invoice/admin/options.php:126
+msgid "Enable to test payments"
+msgstr ""
+
+#: functions/invoice/admin/options.php:136
+msgid "Company Name"
+msgstr ""
+
+#: functions/invoice/admin/options.php:137
+msgid "Displayed on the invoice and in the automated e-mail (if you decide to send it)"
+msgstr ""
+
+#: functions/invoice/admin/options.php:142
+msgid "Address"
+msgstr ""
+
+#: functions/invoice/admin/options.php:146
+msgid "Phone"
+msgstr ""
+
+#: functions/invoice/admin/options.php:150
+msgid "Email"
+msgstr ""
+
+#: functions/invoice/admin/options.php:150
+msgid "Also appears as \"sent from\" in emails."
+msgstr ""
+
+#: functions/invoice/admin/options.php:157
+msgid "Save Changes"
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:4
+msgid "Export"
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:16
+msgid "You do not have sufficient permissions to export the content of this site."
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:21
+msgid "Export Invoices / Quotes"
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:23
+msgid "When you click the button below WordPress will create a CSV file for you to save to your computer."
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:25
+msgid "Choose what to export"
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:29
+msgid "Both Invoices and Quotes"
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:31
+msgid "Only Invoices"
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:33
+msgid "Only Quotes"
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:36
+msgid "Only export paid invoices"
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:37
+msgid "Yes"
+msgstr ""
+
+#: functions/invoice/admin/premium/export.php:40
+msgid "Generate Export File"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:6
+msgid "Stats"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:316
+#: functions/invoice/core/invoice.php:347
+#: functions/invoice/core/invoice.php:378
+msgid "Jan"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:317
+#: functions/invoice/core/invoice.php:348
+#: functions/invoice/core/invoice.php:379
+msgid "Feb"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:318
+#: functions/invoice/core/invoice.php:349
+#: functions/invoice/core/invoice.php:380
+msgid "Mar"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:319
+#: functions/invoice/core/invoice.php:350
+#: functions/invoice/core/invoice.php:381
+msgid "Apr"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:320
+#: functions/invoice/core/invoice.php:351
+#: functions/invoice/core/invoice.php:382
+msgid "May"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:321
+#: functions/invoice/core/invoice.php:352
+#: functions/invoice/core/invoice.php:383
+msgid "Jun"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:322
+#: functions/invoice/core/invoice.php:353
+#: functions/invoice/core/invoice.php:384
+msgid "Jul"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:323
+#: functions/invoice/core/invoice.php:354
+#: functions/invoice/core/invoice.php:385
+msgid "Aug"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:324
+#: functions/invoice/core/invoice.php:355
+#: functions/invoice/core/invoice.php:386
+msgid "Sep"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:325
+#: functions/invoice/core/invoice.php:356
+#: functions/invoice/core/invoice.php:387
+msgid "Oct"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:326
+#: functions/invoice/core/invoice.php:357
+#: functions/invoice/core/invoice.php:388
+msgid "Nov"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:119
+#: functions/invoice/core/functions.php:251
+#: functions/invoice/core/functions.php:294
+#: functions/invoice/core/functions.php:389
+#: functions/invoice/core/invoice.php:327
+#: functions/invoice/core/invoice.php:358
+#: functions/invoice/core/invoice.php:389
+msgid "Dec"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:130
+#: functions/invoice/core/invoice.php:289
+msgid "Quote"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:244
+msgid "Invoice/Quote Statistics"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:247
+msgid "Display from "
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:254
+msgid "Financial Year"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:263
+msgid "Graph"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:269
+msgid "Financial Year "
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:273
+msgid "Normal Year "
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:391
+msgid "Income"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:395
+msgid "Awaiting Payment"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:399
+msgid "Quotes"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:410
+msgid "List"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:415
+msgid "Invoice No."
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:415
+msgid "Invoice Name"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:415
+msgid "Client"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:438
+#: functions/invoice/core/functions.php:337
+msgid "Sent today"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:439
+#: functions/invoice/core/functions.php:338
+msgid "Sent 1 day ago"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:440
+#: functions/invoice/core/functions.php:339
+msgid "Sent "
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:440
+#: functions/invoice/core/functions.php:339
+msgid " days ago"
+msgstr ""
+
+#: functions/invoice/admin/premium/stats.php:442
+#: functions/invoice/core/functions.php:343
+msgid "Not sent yet"
+msgstr ""
+
+#: functions/invoice/core/client.php:60
+msgid "Search Clients"
+msgstr ""
+
+#: functions/invoice/core/client.php:61
+msgid "All Clients"
+msgstr ""
+
+#: functions/invoice/core/client.php:62
+msgid "Parent Client"
+msgstr ""
+
+#: functions/invoice/core/client.php:63
+msgid "Parent Client:"
+msgstr ""
+
+#: functions/invoice/core/client.php:64
+#: functions/invoice/core/invoice.php:442
+#: functions/invoice/core/invoice.php:444
+msgid "Edit Client"
+msgstr ""
+
+#: functions/invoice/core/client.php:65
+msgid "Update Client"
+msgstr ""
+
+#: functions/invoice/core/client.php:66
+msgid "Add New Client"
+msgstr ""
+
+#: functions/invoice/core/client.php:67
+msgid "New Client Name"
+msgstr ""
+
+#: functions/invoice/core/client.php:91
+#: functions/invoice/core/client.php:135
+msgid "Email Address"
+msgstr ""
+
+#: functions/invoice/core/client.php:95
+#: functions/invoice/core/client.php:139
+#: functions/invoice/core/invoice.php:694
+msgid "Password"
+msgstr ""
+
+#: functions/invoice/core/client.php:99
+#: functions/invoice/core/client.php:143
+msgid "Business Name"
+msgstr ""
+
+#: functions/invoice/core/client.php:103
+#: functions/invoice/core/client.php:147
+msgid "Business Address"
+msgstr ""
+
+#: functions/invoice/core/client.php:107
+#: functions/invoice/core/client.php:151
+msgid "Phone Number"
+msgstr ""
+
+#: functions/invoice/core/client.php:111
+#: functions/invoice/core/client.php:155
+msgid "Client Number"
+msgstr ""
+
+#: functions/invoice/core/client.php:113
+#: functions/invoice/core/client.php:157
+msgid "Could be used as a VAT Number"
+msgstr ""
+
+#: functions/invoice/core/functions.php:234
+#: functions/invoice/core/invoice.php:54
+#: functions/invoice/core/invoice.php:288
+#: functions/invoice/gateways/GoogleCheckout.php:18
+#: functions/invoice/gateways/GoogleCheckout.php:19
+#: functions/invoice/gateways/PayPal.php:16
+msgid "Invoice"
+msgstr ""
+
+#: functions/invoice/core/functions.php:382
+#: functions/invoice/core/functions.php:392
+msgid "Not yet"
+msgstr ""
+
+#: functions/invoice/core/functions.php:864
+msgid "Dashboard"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:53
+msgid "Invoices"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:55
+msgid "Search Invoices"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:56
+msgid "All Invoices"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:57
+msgid "Parent Invoice"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:58
+msgid "Parent Invoice:"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:59
+msgid "Edit Invoice"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:60
+msgid "Update Invoice"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:61
+msgid "Add New Invoice"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:62
+msgid "New Invoice Name"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:63
+msgid "View Invoice / Quote"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:202
+msgid "View all Clients"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:269
+msgid "ID Number:"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:272
+#: functions/invoice/core/invoice.php:284
+#: functions/invoice/core/invoice.php:299
+#: functions/invoice/core/invoice.php:311
+#: functions/invoice/core/invoice.php:342
+#: functions/invoice/core/invoice.php:373
+msgid "Edit"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:276
+#: functions/invoice/core/invoice.php:291
+#: functions/invoice/core/invoice.php:303
+#: functions/invoice/core/invoice.php:333
+#: functions/invoice/core/invoice.php:364
+#: functions/invoice/core/invoice.php:395
+msgid "OK"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:277
+#: functions/invoice/core/invoice.php:292
+#: functions/invoice/core/invoice.php:304
+#: functions/invoice/core/invoice.php:335
+#: functions/invoice/core/invoice.php:366
+#: functions/invoice/core/invoice.php:397
+msgid "Cancel"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:281
+msgid "Type:"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:296
+msgid "Tax:"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:308
+msgid "Sent:"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:334
+#: functions/invoice/core/invoice.php:365
+#: functions/invoice/core/invoice.php:396
+msgid "Reset"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:339
+msgid "Paid:"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:370
+msgid "Quote Approved:"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:421
+msgid "Invoice sent successfully!"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:425
+msgid "Invoice failed to send."
+msgstr ""
+
+#: functions/invoice/core/invoice.php:442
+#: functions/invoice/core/invoice.php:444
+#: functions/invoice/core/invoice.php:447
+msgid "Send Email"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:442
+msgid "to"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:444
+msgid "no email address"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:447
+msgid "no Client Selected"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:479
+msgid "Description"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:483
+#: functions/invoice/core/invoice.php:559
+msgid "Subtotal"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:497
+#: functions/invoice/core/invoice.php:531
+msgid "Timed"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:498
+#: functions/invoice/core/invoice.php:532
+msgid "Fixed"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:515
+#: functions/invoice/core/invoice.php:549
+msgid "Remove"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:516
+#: functions/invoice/core/invoice.php:550
+msgid "Reorder"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:567
+msgid "Add New Row"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:693
+msgid "This"
+msgstr ""
+
+#: functions/invoice/core/invoice.php:693
+msgid "is password protected"
+msgstr ""
+
+#: functions/invoice/gateways/GoogleCheckout.php:25
+#: functions/invoice/gateways/PayPal.php:26
+msgid "Pay Now"
+msgstr ""
+
+#: functions/invoice/template/approved.php:9
+msgid "The following"
+msgstr ""
+
+#: functions/invoice/template/approved.php:9
+msgid "has been approved:"
+msgstr ""
+
+#: functions/invoice/template/email.php:12
+msgid "To view your"
+msgstr ""
+
+#: functions/invoice/template/email.php:12
+msgid ", or to print a copy for your records, click the link below:"
+msgstr ""
+
+#: functions/invoice/template/email.php:32
+msgid "For your records&hellip;"
+msgstr ""
+
+#: functions/invoice/template/email.php:33
+msgid "Your client ID is:"
+msgstr ""
+
+#: functions/invoice/template/email.php:34
+msgid "Your client key is:"
+msgstr ""
+
+#: functions/invoice/template/email.php:38
+msgid "Best regards,"
+msgstr ""
+

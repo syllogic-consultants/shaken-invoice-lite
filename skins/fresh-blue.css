@@ -1,0 +1,31 @@
+#page header{
+	border: 1px solid #065dc3;
+	background: #0763cf;
+	background: url(../images/diag-lines.png) repeat, -webkit-gradient(linear, left top, left bottom, from(#0763cf), to(#1d9de5));
+	background: url(../images/diag-lines.png) repeat, -webkit-linear-gradient(#0763cf, #1d9de5);
+	background: url(../images/diag-lines.png) repeat, -moz-linear-gradient(center top, #0763cf 0%, #1d9de5 100%);
+	background: url(../images/diag-lines.png) repeat, -moz-gradient(center top, #0763cf 0%, #1d9de5 100%);
+}
+
+section.mini{
+	border-right: 2px solid #3a97e2;	
+}
+
+.pay, .btn{
+	color: #fff;
+	background: #a0d43d;
+    background: -webkit-gradient(linear, left top, left bottom, from(#a0d43d), to(#66b012));
+    background: -webkit-linear-gradient(#a0d43d, #66b012);
+    background: -moz-linear-gradient(center top, #a0d43d 0%, #66b012 100%);
+    background: -moz-gradient(center top, #a0d43d 0%, #66b012 100%);
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.4);	
+}
+	.summary .pay, .summary .btn, .page-entry .btn{
+		border: 1px solid #5fa510;	
+	}
+
+.controls .left-side{
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}

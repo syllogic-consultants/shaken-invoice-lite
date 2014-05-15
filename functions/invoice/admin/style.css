@@ -1,0 +1,179 @@
+/* Invoice Edit Page
+--------------------------------------------------------------------------------------------*/
+#invoice_details {}
+#invoice_details ul {overflow:hidden; border:#ddd solid 1px; border-bottom:none;}
+#invoice_details ul li {font-size:12px; line-height:24px; padding:5px 5px 5px 10px; margin:0px; border-bottom:#ddd solid 1px; height:26px;}
+#invoice_details ul li:hover {background:#fefded;}
+#invoice_details ul li label {}
+#invoice_details ul li span {font-weight:bold;}
+#invoice_details ul li a{}
+#invoice_details ul li .front{display:inline;}
+#invoice_details ul li .back{display:none;}
+#invoice_details .send-invoice {position:absolute; top:0px; right:0px;}
+
+#invoice_send ul {overflow:hidden;}
+#invoice_send ul li {font-size:10px; line-height:24px; padding:5px; margin:0px; border-bottom:#EEEEEE solid 1px; }
+
+/* Add Invoice Table */
+
+#project_breakdown .inside{overflow:hidden; margin: 0 0 8px; } 
+#project_breakdown .details {overflow:hidden;}
+#project_breakdown .detail.detail-header {
+	background:#e8e8e8; 
+	font-size:14px; 
+	font-weight:bold; 
+	border-top:#ddd solid 1px; 
+	text-shadow:#fff 0px 1px; 
+	margin-top: 10px;
+	border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+#project_breakdown .detail {background:#FFF; border:#DFDFDF solid 1px; border-top:none; padding:10px 10px 0px; overflow:hidden; position:relative;}
+#project_breakdown .details .detail:hover {
+	background:#fefded;
+}
+
+.detail-placeholder{
+	border: 2px dashed #ccc;
+	height: 100px;
+}
+
+#project_breakdown .detail input, #project_breakdown .detail textarea {height:35px; width:100%; color:#333; border:#DFDFDF solid 1px; }
+#project_breakdown .detail input.active, #project_breakdown .detail textarea.active {color:#000; }
+
+#project_breakdown .detail td{
+	padding: 5px;
+	width: 12%;
+	font-size: 13px;
+}
+
+#project_breakdown .detail td.title, #project_breakdown .detail td.description{
+	width: 25%;
+	color: #333;
+	font-size: 12px;
+}
+
+#project_breakdown .detail .grab {
+	display: inline-block;
+	background:url(images/move.png) left center no-repeat; 
+	min-height:10px; 
+	padding: 2px 0 2px 20px;
+	margin: 0 0 10px 20px;
+	cursor:move; 
+}
+
+#project_breakdown .detail a.delete {
+	display: inline-block;
+	min-height:12px; 
+	padding: 2px 0 2px 20px;
+	background:url(images/cancel.png) left center no-repeat; 
+	color: #BC0B0B;
+	text-decoration: none;
+}
+
+#project_breakdown .detail a.delete:hover{
+	text-decoration: underline;
+}
+
+#project_breakdown .detail.detail-footer {-moz-border-radius: 0 0 5px 5px; -webkit-border-radius: 0 0 5px 5px; border-radius: 0 0 5px 5px; background:#e8e8e8; border-bottom:#ddd solid 1px;}
+#project_breakdown .detail.detail-footer p {margin:0px; padding:0px 0px 10px; text-align:right;}
+#project_breakdown .detail.detail-footer a.button-primary {}
+
+#invoice_send p {padding:10px 0px;}
+
+
+
+/*--------------------------------------------------------------------------------------------
+								Invoice Stats Page v2
+--------------------------------------------------------------------------------------------*/
+#sh_invoice-stats {max-width:850px;}
+#sh_invoice-stats .inside, #sh_invoice-stats .sh_invoice-heading {overflow:hidden;}
+
+.sh_invoice-heading {margin-bottom:20px;}
+.sh_invoice-heading h2 {margin:18px 0px 0px;}
+.sh_invoice-heading ul {margin:2px 0px 0px;}
+.sh_invoice-heading p {color:#666; font-size:11px; margin:6px 0px 0px;}
+
+#sh_invoice-stats #sh_invoice-stats-graph .inside {padding:20px 0px; margin:0px; position:relative;}
+#sh_invoice-stats #sh_invoice-stats-graph .inside .sh_invoice-stats-graph {width:690px; height:300px; }
+
+#sh_invoice-stats #sh_invoice-stats-graph .summary {width:170px; position:absolute; top:0px; right:0px; margin:-1px -1px 0px 0px;}
+#sh_invoice-stats #sh_invoice-stats-graph .summary ul {overflow:hidden; border:#EEEEEE solid 1px; border-bottom:none;}
+#sh_invoice-stats #sh_invoice-stats-graph .summary ul li {font-size:10px; line-height:24px; padding:15px 12px; margin:0px; border-bottom:#EEEEEE solid 1px;  }
+
+#sh_invoice-stats #sh_invoice-stats-graph .summary h3 {background:none; font-weight:normal; font-size:12px; line-height:12px; padding:0px; margin:0px; cursor:auto;}
+#sh_invoice-stats #sh_invoice-stats-graph .summary h3 span {background:#7fd700; border:#5ecb00 solid 2px; display:block; width:14px; height:11px; -moz-border-radius: 3px; -webkit-border-radius: 3px;-khtml-border-radius: 3px; border-radius: 3px; float:left; margin-right:10px; }
+#sh_invoice-stats #sh_invoice-stats-graph .summary .awaiting-payment h3 span {background-color:#c1e6a0; border:#b4e587 solid 2px;}
+#sh_invoice-stats #sh_invoice-stats-graph .summary .quotes h3 span {background-color:#e7e7e7; border:#dfdfdf solid 2px;}
+#sh_invoice-stats #sh_invoice-stats-graph .summary h2 {padding:0px; margin:0px; text-align:center; font-size:22px; line-height:22px; margin:4px 0px; font-style:normal;}
+#sh_invoice-stats #sh_invoice-stats-graph .summary h4 {padding:0px; margin:0px; text-align:center; font-size:10px; line-height:10px; color:#999; font-weight:normal; margin:5px 0px;}
+
+#sh_invoice-stats .sh_invoice-stats-invoices {width:100%; margin-top:30px;}
+
+#sh_invoice-stats table {width:100%; }
+#sh_invoice-stats td, #sh_invoice-stats th {font-size:11px;}
+#sh_invoice-stats tr {height:22px;}
+#sh_invoice-stats th {border-bottom:2px solid #CCCCCC; text-align:left;}
+#sh_invoice-stats tr.alternate {background-color:#E6F0FF;}
+
+#sh_invoice-stats td.invoice-number {width: 80px; text-align:center; padding:0px;}
+#sh_invoice-stats td.invoice-date {width: 100px;}
+#sh_invoice-stats td.total {width: 70px; text-align:right;}
+#sh_invoice-stats td {padding:0px 8px;}
+#sh_invoice-stats td .tick {width:16px; height:16px; background:url(images/accepted_16.png);}
+#sh_invoice-stats td .cross {width:16px; height:16px; background:url(images/warning_16.png);}
+
+#sh_invoice-stats a.highcharts-credits{display:none;}
+
+
+/*--------------------------------------------------------------------------------------------
+								Invoice Options Page
+--------------------------------------------------------------------------------------------*/
+#sh_invoice-options p.submit {padding:0px; margin:20px 6px 14px;}
+
+#poststuff {overflow:hidden;}
+
+.form-table th span {font-size:10px; font-weight:normal; color:#666; clear:both; display:block; }
+
+/*--------------------------------------------------------------------------------------------
+								Invoice Columns
+--------------------------------------------------------------------------------------------*/
+.widefat th#invoice_no {width:100px;}
+.widefat th#invoice_type {width:100px;}
+
+/*--------------------------------------------------------------------------------------------
+								Invoice Help Page
+--------------------------------------------------------------------------------------------*/
+.wrap.sh_invoice{}
+
+.wrap.sh_invoice p{color:#333; font-family:"Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif; font-size:12px; line-height:22px;}
+.wrap.sh_invoice ul{list-style:square outside none; margin-left:22px;}
+.wrap.sh_invoice ul li{color:#333; font-family:"Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif; font-size:12px; line-height:22px;}
+
+.wrap.sh_invoice .left-column { width:736px; float:left; margin-right:20px;}
+.wrap.sh_invoice .left-column iframe{ height:430px; width:720px; overflow:hidden; }
+
+.wrap.sh_invoice td {padding-top:10px; font-size:11px; line-height:16px;}
+.wrap.sh_invoice label {font-size:14px; line-height:14px; font-weight:bold; padding:6px;}
+.wrap.sh_invoice h4 {font-size:14px; line-height:14px; font-weight:bold; padding:6px; padding-right:10px; margin:0px;}
+.wrap.sh_invoice h6 {font-size:9px; font-weight:normal; margin:0px 0px 0px 6px; position:relative; margin-top:-4px; color:#1D5F95;}
+.wrap.sh_invoice .api td {padding:6px;}
+.wrap.sh_invoice .api tr.odd td {background-color:#f5f9fa;}
+.wrap.sh_invoice .api p {font-size:11px; line-height:16px; color:#333;}
+
+.wrap.sh_invoice.help .right-column { width:385px; float:left;}
+
+.wrap.sh_invoice.help .buttons{ margin-bottom:20px;}
+.wrap.sh_invoice.help .buttons table td{padding-top:0px; padding-right:10px; vertical-align:top;}
+.sh_invoice-button {display:block; width:187px; height:51px; cursor:pointer; border:none 0; padding:0px; margin:0px; background-image:url('images/sh_invoice-buttons.png'); overflow:hidden; white-space:nowrap; text-indent:400px;}
+.sh_invoice-button.rate { background-position:187px 0px;}
+.sh_invoice-button.rate:hover {background-position:187px -51px;}
+.sh_invoice-button.donate {background-position:0px 0px;}
+.sh_invoice-button.donate:hover {background-position:0px -51px;}
+
+.postbox.twitter {}
+.postbox.twitter .inside {margin:0px !important;}
+.postbox.twitter #twtr-widget-1 .twtr-hd h3 {background:none transparent !important;}
+.postbox.twitter .twtr-hd{background:url('../../../../wp-admin/images/gray-grad.png') repeat-x scroll left top #DFDFDF; text-shadow:0 1px 0 #FFFFFF; color:#333;}
+.postbox.twitter .twtr-bd {padding:0px;}

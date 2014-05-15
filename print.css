@@ -1,0 +1,51 @@
+/* No shadows or round corners */
+#page, #page header, #to-from, .summary, .summary .pay, .summary .btn{
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+   	box-shadow: none;
+}
+
+/* Hide elements */
+.controls, nav, footer, .summary .pay{
+	display: none;
+}
+
+/* Style the invoice container */
+#page, body, #to-from, #to-from.paid-status{
+	background: none;
+}
+
+/* Invoice header */
+#page header{
+	background: none;
+	border: 0 none;
+	border-top: 3px solid #000;
+	border-bottom: 3px solid #000;
+	color: #000;
+	text-shadow: none;
+}
+
+section.mini{
+	text-shadow: none;
+}
+
+section.mini p{
+	font-size: 10pt;
+}
+
+.summary .pay, .summary .btn{
+	border: 1px solid #999;
+	background: none;
+	color: #000;
+}
+
+#to-from{
+	border:none 0;
+	padding-bottom: 0;
+}
+
+.summary{
+	border: 2px solid #000;
+}
